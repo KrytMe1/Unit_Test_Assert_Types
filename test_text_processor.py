@@ -55,14 +55,22 @@ def test_count_words_greater_less():
 
 def test_count_words_empty_string():
     """7. Üres sztring bemenet ellenőrzése"""
-    pass
-
+    processor = TextProcessor()
+    result = processor.count_words("")
+    assert result == 0
+    assert result is not None
 
 def test_is_palindrome_true_false():
     """8. Assert True/False - boolean ellenőrzés"""
-    pass
+    processor = TextProcessor()
+    assert processor.is_palindrome("indul a görög aludni") is True
+    assert processor.is_palindrome("hello") is False
 
 
 def test_remove_spaces_multiple_asserts():
     """9. Több assert egy tesztben"""
-    pass
+    processor = TextProcessor()
+    result = processor.remove_spaces("a b c d e")
+    assert result == "abcde"
+    assert " " not in result
+    result_empty = processor.remove_spaces("")
